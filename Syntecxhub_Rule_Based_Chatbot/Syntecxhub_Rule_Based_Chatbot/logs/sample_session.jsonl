@@ -1,0 +1,22 @@
+{"time": "2026-10-16T05:53:49", "speaker": "user", "text": "hello", "intent": null, "confidence": null}
+{"time": "2026-10-16T05:53:49", "speaker": "bot", "text": "Hello! I'm SyntecBot, a rule-based chatbot. Ask me about Artificial Intelligence, or type 'help' to see what I can do.", "intent": "greeting", "confidence": 1.0}
+{"time": "2026-10-16T05:53:49", "speaker": "user", "text": "my name is Islam", "intent": null, "confidence": null}
+{"time": "2026-10-16T05:53:49", "speaker": "bot", "text": "Nice to meet you, Islam! How can I help you today?", "intent": "user_name_set", "confidence": 1.0}
+{"time": "2026-10-16T05:53:49", "speaker": "user", "text": "what is machine learning?", "intent": null, "confidence": null}
+{"time": "2026-10-16T05:53:49", "speaker": "bot", "text": "Machine Learning (ML) is a branch of AI where algorithms learn patterns from data instead of being explicitly programmed. The three main types are supervised, unsupervised and reinforcement learning.", "intent": "kb:machine_learning", "confidence": 1.0}
+{"time": "2026-10-16T05:53:49", "speaker": "user", "text": "tell me more", "intent": null, "confidence": null}
+{"time": "2026-10-16T05:53:49", "speaker": "bot", "text": "Related topics you can ask me about: Supervised Learning, Unsupervised Learning, Reinforcement Learning, Deep Learning.", "intent": "more", "confidence": 1.0}
+{"time": "2026-10-16T05:53:49", "speaker": "user", "text": "explain A* search", "intent": null, "confidence": null}
+{"time": "2026-10-16T05:53:49", "speaker": "bot", "text": "A* is an informed search algorithm that finds the shortest path by always expanding the node with the lowest f(n) = g(n) + h(n), where g is the cost so far and h is a heuristic estimate of the remaining cost. It is optimal when the heuristic is admissible (never overestimates).", "intent": "kb:astar", "confidence": 1.0}
+{"time": "2026-10-16T05:53:49", "speaker": "user", "text": "hi, tell me about NLP", "intent": null, "confidence": null}
+{"time": "2026-10-16T05:53:49", "speaker": "bot", "text": "Hi, Islam! Natural Language Processing (NLP) lets computers understand, interpret and generate human language. Typical tasks are tokenization, sentiment analysis, translation, question answering and chatbots.", "intent": "kb:nlp", "confidence": 1.0}
+{"time": "2026-10-16T05:53:49", "speaker": "user", "text": "how do I prevent overfitting?", "intent": null, "confidence": null}
+{"time": "2026-10-16T05:53:49", "speaker": "bot", "text": "Overfitting happens when a model memorizes the training data, including its noise, and performs poorly on new data. Remedies: more data, simpler models, regularization, dropout, early stopping and cross-validation. Underfitting is the opposite: the model is too simple to capture the pattern.", "intent": "kb:overfitting", "confidence": 0.5}
+{"time": "2026-10-16T05:53:49", "speaker": "user", "text": "what time is it", "intent": null, "confidence": null}
+{"time": "2026-10-16T05:53:49", "speaker": "bot", "text": "The current time is 5:53 AM.", "intent": "time", "confidence": 1.0}
+{"time": "2026-10-16T05:53:49", "speaker": "user", "text": "what is the capital of France?", "intent": null, "confidence": null}
+{"time": "2026-10-16T05:53:49", "speaker": "bot", "text": "Sorry, I don't know about that yet. Try asking about AI topics like machine learning, neural networks or A* search.", "intent": "fallback", "confidence": 0.0}
+{"time": "2026-10-16T05:53:49", "speaker": "user", "text": "thanks", "intent": null, "confidence": null}
+{"time": "2026-10-16T05:53:49", "speaker": "bot", "text": "My pleasure! Let me know if you have more questions.", "intent": "thanks", "confidence": 1.0}
+{"time": "2026-10-16T05:53:49", "speaker": "user", "text": "bye", "intent": null, "confidence": null}
+{"time": "2026-10-16T05:53:49", "speaker": "bot", "text": "Bye, Islam! It was nice talking with you.", "intent": "farewell", "confidence": 1.0}

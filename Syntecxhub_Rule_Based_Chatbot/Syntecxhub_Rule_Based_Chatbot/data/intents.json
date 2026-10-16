@@ -1,0 +1,201 @@
+{
+  "bot": { "name": "SyntecBot" },
+  "intents": [
+    {
+      "tag": "farewell", "priority": 10, "exit": true, "max_words": 6,
+      "patterns": [
+        "^(bye|goodbye|good bye|see you|see ya|cya|take care|good night|farewell)\\b",
+        "^(quit|exit)( now| chat| please)?$",
+        "\\bsee you (later|soon)\\b",
+        "\\bi have to go\\b"
+      ],
+      "responses": [
+        "Goodbye{nc}! Thanks for chatting. Come back soon!",
+        "Bye{nc}! It was nice talking with you.",
+        "See you later{nc}! Keep exploring AI."
+      ]
+    },
+    {
+      "tag": "greeting", "priority": 9, "max_words": 6, "yield_to_kb": true,
+      "patterns": [
+        "^(hi+|hello+|hey+|heya|hiya|yo|greetings|hola|namaste|salam|assalamu ?alaikum|assalamualaikum|good (morning|afternoon|evening))\\b"
+      ],
+      "responses": [
+        "Hello{nc}! I'm {bot}, a rule-based chatbot. Ask me about Artificial Intelligence, or type 'help' to see what I can do.",
+        "Hi{nc}! Nice to meet you. What would you like to know about AI today?",
+        "Hey{nc}! How can I help you today?"
+      ]
+    },
+    {
+      "tag": "how_are_you", "priority": 8,
+      "patterns": [
+        "\\bhow are you\\b", "\\bhow do you do\\b", "\\bhow is it going\\b",
+        "\\bhow is everything\\b", "\\bwhat is up\\b", "\\bhow have you been\\b"
+      ],
+      "responses": [
+        "I'm doing great{nc}, thanks for asking! How about you?",
+        "All systems running smoothly! How are you feeling today{nc}?",
+        "Feeling fully charged and ready to chat. How are you?"
+      ]
+    },
+    {
+      "tag": "thanks", "priority": 8, "max_words": 8, "yield_to_kb": true,
+      "patterns": ["\\b(thanks|thank you|thankyou|thx|much appreciated)\\b"],
+      "responses": [
+        "You're welcome{nc}! Happy to help.",
+        "Anytime{nc}! Ask me anything else about AI.",
+        "My pleasure! Let me know if you have more questions."
+      ]
+    },
+    {
+      "tag": "help", "priority": 8, "yield_to_kb": true,
+      "patterns": [
+        "^(help|menu|commands|options)$", "\\bwhat can you do\\b", "\\bhow can you help\\b",
+        "\\bhow do i use (you|this)\\b", "\\b(need|want) (some )?help\\b",
+        "^help me\\b", "\\bcan you help( me)?$"
+      ],
+      "responses": [
+        "I'm {bot}. Here's what I can do:\n  - Chat: greetings, small talk, jokes, the time and the date\n  - Answer questions about Artificial Intelligence (try 'What is machine learning?' or 'Explain A* search')\n  - Remember your name (say 'My name is ...')\n  - Type 'topics' to see everything I know, 'tell me more' for related topics\n  - Commands: /help  /topics  /history  /save  /clear  /exit"
+      ]
+    },
+    {
+      "tag": "topics", "priority": 8, "action": "list_topics",
+      "patterns": [
+        "^topics?$", "\\b(what|which) topics\\b", "\\blist (of )?topics\\b",
+        "\\bwhat do you know\\b", "\\bwhat can i ask\\b", "\\bwhat should i ask\\b"
+      ],
+      "responses": [
+        "I can answer questions on {count} topics:\n{topics}\nJust ask, for example: 'What is overfitting?'"
+      ]
+    },
+    {
+      "tag": "more", "priority": 8, "action": "more",
+      "patterns": [
+        "^(tell me more|more|more info|what else|go on|continue|elaborate|related|related topics|anything else)$",
+        "^tell me more about (it|that|this)$"
+      ],
+      "responses": [
+        "Ask me a question first, and then I can suggest related topics. Try 'What is machine learning?'"
+      ]
+    },
+    {
+      "tag": "bot_name", "priority": 8,
+      "patterns": [
+        "\\byour name\\b", "\\bwho are you\\b", "\\bwhat are you called\\b",
+        "\\bintroduce yourself\\b", "\\bwhat are you\\b"
+      ],
+      "responses": [
+        "I'm {bot}, a rule-based chatbot built for the Syntecxhub AI internship. I use pattern matching and a small AI knowledge base to chat with you."
+      ]
+    },
+    {
+      "tag": "bot_creator", "priority": 8,
+      "patterns": [
+        "\\bwho (made|created|built|developed|programmed|designed|wrote) you\\b",
+        "\\bwho is your (creator|developer|maker|author)\\b", "\\byour (creator|developer|maker)\\b"
+      ],
+      "responses": [
+        "I was written in Python as a Syntecxhub Artificial Intelligence internship project: a simple rule-based chatbot."
+      ]
+    },
+    {
+      "tag": "bot_identity", "priority": 8,
+      "patterns": ["\\bare you (a |an )?(bot|robot|chatbot|human|real|ai|person|alive|machine)\\b"],
+      "responses": [
+        "I'm a chatbot - a program, not a person. I follow pattern-matching rules and a small knowledge base, but I'll do my best to help!"
+      ]
+    },
+    {
+      "tag": "bot_age", "priority": 8,
+      "patterns": ["\\bhow old are you\\b", "\\byour age\\b"],
+      "responses": ["I don't age like humans do - I'm just a freshly written Python program!"]
+    },
+    {
+      "tag": "user_name_set", "priority": 9, "action": "remember_name",
+      "patterns": ["\\b(?:my name is|call me|i am called|people call me)\\s+(?P<name>[a-z][a-z]*(?: [a-z][a-z]*)?)"],
+      "responses": [
+        "Nice to meet you, {name}! How can I help you today?",
+        "Great to meet you, {name}! Ask me anything about AI."
+      ]
+    },
+    {
+      "tag": "user_name_ask", "priority": 9, "action": "ask_name",
+      "patterns": ["\\bwhat is my name\\b", "\\bdo you (know|remember) my name\\b", "\\bwho am i\\b"],
+      "responses": ["Your name is {name}."],
+      "responses_alt": ["I don't know your name yet - tell me with 'My name is ...'."]
+    },
+    {
+      "tag": "time", "priority": 8,
+      "patterns": [
+        "^(?:please )?(?:tell me )?(?:what is the time|what time is it|the time|current time|time)(?: now| please| right now| today)*$"
+      ],
+      "responses": ["The current time is {time}."]
+    },
+    {
+      "tag": "date", "priority": 8,
+      "patterns": [
+        "^(?:please )?(?:tell me )?(?:what is (?:the )?(?:todays )?date|what is today|what day is (?:it|today)|todays date|the date|current date|date|today)(?: today| now| please)*$"
+      ],
+      "responses": ["Today is {date}."]
+    },
+    {
+      "tag": "joke", "priority": 8,
+      "patterns": ["\\bjoke\\b", "\\bmake me laugh\\b", "\\bsomething funny\\b"],
+      "responses": [
+        "Why did the AI go to school? To improve its learning rate!",
+        "Why do programmers prefer dark mode? Because light attracts bugs.",
+        "A SQL query walks into a bar, walks up to two tables and asks: 'Can I join you?'",
+        "Why was the machine learning model so calm? It had great regularization.",
+        "There are 10 kinds of people: those who understand binary and those who don't."
+      ]
+    },
+    {
+      "tag": "mood_good", "priority": 7,
+      "patterns": ["^(?:i am|i feel) (?:very |really |so )?(?:fine|good|great|happy|well|okay|ok|awesome|excited|amazing)\\b"],
+      "responses": [
+        "Glad to hear that{nc}! What would you like to explore today?",
+        "That's wonderful{nc}! Want to learn something new about AI?"
+      ]
+    },
+    {
+      "tag": "mood_bad", "priority": 7,
+      "patterns": ["^(?:i am|i feel) (?:very |really |so )?(?:sad|tired|bored|stressed|upset|angry|worried|anxious|lonely|down)\\b"],
+      "responses": [
+        "Sorry to hear that{nc}. I'm just a simple chatbot, but I'm happy to chat or share a fun AI fact. Talking to a friend you trust can help too."
+      ]
+    },
+    {
+      "tag": "compliment", "priority": 8,
+      "patterns": [
+        "\\byou are (?:so |very |really )?(?:great|awesome|smart|amazing|good|cool|helpful|nice|clever|the best)\\b",
+        "\\b(?:good|nice|great) (?:job|bot|work)\\b", "\\bwell done\\b"
+      ],
+      "responses": [
+        "Thank you{nc}! That's kind of you.",
+        "Thanks! I'm glad I could help."
+      ]
+    },
+    {
+      "tag": "affirm", "priority": 6,
+      "patterns": ["^(?:yes|yeah|yep|yup|sure|ok|okay|alright|cool|nice|great|fine)$"],
+      "responses": ["Great! Ask me anything about AI, or type 'topics' to see what I know."]
+    },
+    {
+      "tag": "deny", "priority": 6,
+      "patterns": ["^(?:no|nope|nah|not really)$"],
+      "responses": ["No problem. I'm here whenever you have a question."]
+    },
+    {
+      "tag": "weather", "priority": 7,
+      "patterns": ["\\bweather\\b", "\\bwill it rain\\b"],
+      "responses": [
+        "I'm an offline chatbot, so I can't check live weather. A weather app or website will give you an accurate forecast."
+      ]
+    }
+  ],
+  "fallback": [
+    "Sorry, I don't know about that yet. Try asking about AI topics like machine learning, neural networks or A* search.",
+    "Hmm, I didn't understand that. Could you rephrase it?",
+    "I'm a simple rule-based bot, so my knowledge is limited. Type 'topics' to see what I can talk about."
+  ]
+}
